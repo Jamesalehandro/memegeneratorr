@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from "@mui/material/Container";
+import AllMemes from "./components/Allmemes";
+import NavBar from "./components/NavBar";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container
+      disableGutters
+      sx={{
+        // border: "2px solid crimson",
+        width: "90%",
+        my: 5,
+        display: "flex",
+        flexDirection: "column",
+        placeItems: "center",
+        minHeight: "50vh",
+        boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+      }}
+      className="App"
+    >
+      <NavBar />
+      <AllMemes />
+    </Container>
   );
-}
+};
 
 export default App;
