@@ -60,6 +60,7 @@ const AllMemes = () => {
           value={topText}
           variant={"outlined"}
           onChange={handleChange}
+          inputProps={{ maxLength: 15 }}
         />
 
         <TextField
@@ -71,6 +72,7 @@ const AllMemes = () => {
           value={bottom}
           className="bottomText"
           onChange={handleChange}
+          inputProps={{ maxLength: 15 }}
         />
 
         <FormControl fullWidth>
@@ -239,7 +241,7 @@ const AllMemes = () => {
               width: "30%",
               bottom: "20px",
               left: "370px",
-              fontSize: "50px",
+              fontSize: "35px",
               fontWeight: "bolder",
               textAlign: "center",
               color: { color },
