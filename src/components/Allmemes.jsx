@@ -4,10 +4,14 @@ import {
   Avatar,
   Box,
   Button,
+  FormControl,
+  MenuItem,
+  Select,
   Stack,
   TextField,
   Typography,
 } from "@mui/material";
+import { colors } from "../Data/colors";
 
 const AllMemes = () => {
   // Initial values
@@ -15,6 +19,7 @@ const AllMemes = () => {
     topText: "",
     bottom: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
+    color: "Brown",
   };
 
   // Hooks
@@ -28,7 +33,7 @@ const AllMemes = () => {
   }, []);
 
   // Destructuring
-  const { topText, bottom, randomImage } = form;
+  const { topText, bottom, randomImage, color } = form;
 
   // Functions
   const handleChange = (e) => {
@@ -67,6 +72,28 @@ const AllMemes = () => {
           className="bottomText"
           onChange={handleChange}
         />
+
+        <FormControl fullWidth>
+          <Select
+            labelId="demo-simple-select-label"
+            placeholder="age"
+            size="small"
+            value={color}
+            name="color"
+            variant={"outlined"}
+            displayEmpty
+            onChange={handleChange}
+          >
+            <MenuItem value="brown">Choose text color</MenuItem>
+            {colors.map((item, index) => {
+              return (
+                <MenuItem key={index} value={item}>
+                  {item}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
       </Stack>
 
       <Button
@@ -82,7 +109,7 @@ const AllMemes = () => {
       <div className="memeImg">
         <Avatar
           variant="square"
-          sx={{ width: "100%", height: "100%", zindex: -5 }}
+          sx={{ width: "100%", height: "100%" }}
           src={randomImage}
           alt=""
         />
@@ -94,13 +121,11 @@ const AllMemes = () => {
             "@media (max-width: 480px)": {
               position: "absolute",
               width: "30%",
-              opacity: 1,
-              zIndex: 10000,
               top: "10px",
               left: "100px",
               fontWeight: "bolder",
               textAlign: "center",
-              color: "coral",
+              color: { color },
               fontFamily: "cursive",
               fontSize: "25px",
             },
@@ -108,13 +133,11 @@ const AllMemes = () => {
             "@media (min-width: 481px) and (max-width: 767px)": {
               position: "absolute",
               width: "30%",
-              opacity: 1,
-              zIndex: 10000,
               top: "10px",
               left: "120px",
               fontWeight: "bolder",
               textAlign: "center",
-              color: "coral",
+              color: { color },
               fontFamily: "cursive",
               fontSize: "25px",
             },
@@ -122,42 +145,36 @@ const AllMemes = () => {
             "@media (min-width: 768px) and (max-width: 991px)": {
               position: "absolute",
               width: "30%",
-              opacity: 1,
-              zIndex: 10000,
               top: "10px",
               left: "200px",
               fontSize: "35px",
               fontWeight: "bolder",
               textAlign: "center",
-              color: "coral",
+              color: { color },
               fontFamily: "cursive",
             },
 
             "@media (min-width: 992px) and (max-width: 1199px)": {
               position: "absolute",
               width: "30%",
-              opacity: 1,
-              zIndex: 10000,
               top: "10px",
               left: "250px",
               fontSize: "35px",
               fontWeight: "bolder",
               textAlign: "center",
-              color: "coral",
+              color: { color },
               fontFamily: "cursive",
             },
 
             "@media (min-width: 1200px)": {
               position: "absolute",
-              opacity: 1,
-              zIndex: 10000,
               width: "30%",
               top: "20px",
               left: "370px",
               fontSize: "35px",
               fontWeight: "bolder",
               textAlign: "center",
-              color: "coral",
+              color: { color },
               fontFamily: "cursive",
             },
           }}
@@ -172,13 +189,11 @@ const AllMemes = () => {
             "@media (max-width: 480px)": {
               position: "absolute",
               width: "30%",
-              opacity: 1,
-              zIndex: 10000,
               bottom: "10px",
               left: "100px",
               fontWeight: "bolder",
               textAlign: "center",
-              color: "coral",
+              color: { color },
               fontFamily: "cursive",
               fontSize: "25px",
             },
@@ -186,13 +201,11 @@ const AllMemes = () => {
             "@media (min-width: 481px) and (max-width: 767px)": {
               position: "absolute",
               width: "30%",
-              opacity: 1,
-              zIndex: 10000,
               bottom: "10px",
               left: "120px",
               fontWeight: "bolder",
               textAlign: "center",
-              color: "coral",
+              color: { color },
               fontFamily: "cursive",
               fontSize: "25px",
             },
@@ -200,42 +213,36 @@ const AllMemes = () => {
             "@media (min-width: 768px) and (max-width: 991px)": {
               position: "absolute",
               width: "30%",
-              opacity: 1,
-              zIndex: 10000,
               bottom: "20px",
               left: "210px",
               fontSize: "35px",
               fontWeight: "bolder",
               textAlign: "center",
-              color: "coral",
+              color: { color },
               fontFamily: "cursive",
             },
 
             "@media (min-width: 992px) and (max-width: 1199px)": {
               position: "absolute",
               width: "30%",
-              opacity: 1,
-              zIndex: 10000,
               bottom: "20px",
               left: "250px",
               fontSize: "35px",
               fontWeight: "bolder",
               textAlign: "center",
-              color: "coral",
+              color: { color },
               fontFamily: "cursive",
             },
 
             "@media (min-width: 1200px)": {
               position: "absolute",
               width: "30%",
-              opacity: 1,
-              zIndex: 10000,
               bottom: "20px",
               left: "370px",
               fontSize: "50px",
               fontWeight: "bolder",
               textAlign: "center",
-              color: "coral",
+              color: { color },
               fontFamily: "cursive",
             },
           }}
