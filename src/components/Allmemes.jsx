@@ -5,6 +5,7 @@ import {
   Box,
   Button,
   FormControl,
+  InputLabel,
   MenuItem,
   Select,
   Stack,
@@ -19,7 +20,7 @@ const AllMemes = () => {
     topText: "",
     bottom: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
-    color: "Brown",
+    color: "Choose text color",
   };
 
   // Hooks
@@ -76,17 +77,21 @@ const AllMemes = () => {
         />
 
         <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">
+            Choose text color
+          </InputLabel>
           <Select
             labelId="demo-simple-select-label"
-            placeholder="age"
+            id="demo-simple-select"
             size="small"
             value={color}
             name="color"
             variant={"outlined"}
-            displayEmpty
+            label="Choose text color"
+            displayEmpty={true}
+            placeholder="Choose text color"
             onChange={handleChange}
           >
-            <MenuItem value="brown">Choose text color</MenuItem>
             {colors.map((item, index) => {
               return (
                 <MenuItem key={index} value={item}>
