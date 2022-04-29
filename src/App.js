@@ -7,7 +7,6 @@ const App = () => {
     <Container
       disableGutters
       sx={{
-        // border: "2px solid crimson",
         width: "90%",
         my: 5,
         display: "flex",
